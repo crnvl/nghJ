@@ -1,1 +1,1 @@
-worker: java -jar out/artifacts/NghJ_jar/NghJ.jar
+worker: java -jar target/NghJ.jar
