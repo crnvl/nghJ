@@ -1,1 +1,1 @@
-worker: java -jar target/NghJ.jar
+worker: java -jar NghJ-1.0-SNAPSHOT.jar
