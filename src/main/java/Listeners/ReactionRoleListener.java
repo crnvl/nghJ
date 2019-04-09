@@ -16,6 +16,17 @@ public class ReactionRoleListener extends ListenerAdapter {
                         break;
                 }
         }
+        if(event.getMessageId().contains("550777280155090946")) {
+            String reactionId = event.getReactionEmote().getName();
+            switch (reactionId) {
+                case "ansMenheraWave":
+                    event.getGuild().getController().addRolesToMember(event.getMember(), event.getGuild().getRoleById("550773380501209108")).queue();
+                    break;
+                case "ansMenheraWink":
+                    event.getGuild().getController().addRolesToMember(event.getMember(), event.getGuild().getRoleById("550773380501209108")).queue();
+                    break;
+            }
+        }
     }
 
     @Override
@@ -25,6 +36,17 @@ public class ReactionRoleListener extends ListenerAdapter {
             switch (reactionId) {
                 case "weary":
                     event.getGuild().getController().removeRolesFromMember(event.getMember(), event.getGuild().getRoleById("563780537878315018")).queue();
+                    break;
+            }
+        }
+        if(event.getMessageId().contains("550777280155090946")) {
+            String reactionId = event.getReactionEmote().getName();
+            switch (reactionId) {
+                case "ansMenheraWave":
+                    event.getGuild().getController().removeRolesFromMember(event.getMember(), event.getGuild().getRoleById("550773380501209108")).queue();
+                    break;
+                case "ansMenheraWink":
+                    event.getGuild().getController().removeRolesFromMember(event.getMember(), event.getGuild().getRoleById("550773380501209108")).queue();
                     break;
             }
         }
