@@ -15,18 +15,14 @@ public class ReactionRoleListener extends ListenerAdapter {
                         event.getGuild().getController().addRolesToMember(event.getMember(), event.getGuild().getRoleById("563780537878315018")).queue();
                         break;
                 }
-        }
-        if(event.getMessageId().contains("550777280155090946")) {
-            String reactionId = event.getReactionEmote().getName();
-            switch (reactionId) {
-                case "ansMenheraWave":
-                    event.getGuild().getController().addRolesToMember(event.getMember(), event.getGuild().getRoleById("550773380501209108")).queue();
-                    break;
-                case "ansMenheraWink":
-                    event.getGuild().getController().addRolesToMember(event.getMember(), event.getGuild().getRoleById("550773380501209108")).queue();
-                    break;
+        }else if (event.getMessageId().contains("550777280155090946")) {
+                String reactionId = event.getReactionEmote().getName();
+                switch (reactionId) {
+                    case "MenheraWave":
+                        event.getGuild().getController().addRolesToMember(event.getMember(), event.getGuild().getRoleById("550773380501209108")).queue();
+                        break;
+                }
             }
-        }
     }
 
     @Override
@@ -38,14 +34,10 @@ public class ReactionRoleListener extends ListenerAdapter {
                     event.getGuild().getController().removeRolesFromMember(event.getMember(), event.getGuild().getRoleById("563780537878315018")).queue();
                     break;
             }
-        }
-        if(event.getMessageId().contains("550777280155090946")) {
+        }else if(event.getMessageId().contains("550777280155090946")) {
             String reactionId = event.getReactionEmote().getName();
             switch (reactionId) {
-                case "ansMenheraWave":
-                    event.getGuild().getController().removeRolesFromMember(event.getMember(), event.getGuild().getRoleById("550773380501209108")).queue();
-                    break;
-                case "ansMenheraWink":
+                case "MenheraWave":
                     event.getGuild().getController().removeRolesFromMember(event.getMember(), event.getGuild().getRoleById("550773380501209108")).queue();
                     break;
             }
