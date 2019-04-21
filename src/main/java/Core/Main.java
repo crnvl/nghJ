@@ -1,8 +1,10 @@
 package Core;
 
+import Commands.refreshTeams;
 import Listeners.CommandListener;
 import Listeners.ReactionRoleListener;
 import Listeners.TeamListener;
+import Utility.CommandHandler;
 import Utility.Config;
 import net.dv8tion.jda.core.AccountType;
 import net.dv8tion.jda.core.JDA;
@@ -33,7 +35,7 @@ public class Main {
     }
 
     public static void addCommands() {
-
+        CommandHandler.commands.put("teamroles", new refreshTeams());
     }
 
 }
