@@ -1,7 +1,9 @@
 package Core;
 
+import Commands.Statistics;
 import Commands.refreshTeams;
 import Listeners.CommandListener;
+import Listeners.EventHandler;
 import Listeners.ReactionRoleListener;
 import Listeners.TeamListener;
 import Utility.CommandHandler;
@@ -28,6 +30,7 @@ public class Main {
         builder.addEventListener(new CommandListener());
         builder.addEventListener(new ReactionRoleListener());
         builder.addEventListener(new TeamListener());
+        builder.addEventListener(new EventHandler());
         addCommands();
 
         JDA jda = builder.build();
@@ -36,6 +39,7 @@ public class Main {
 
     public static void addCommands() {
         CommandHandler.commands.put("teamroles", new refreshTeams());
+        CommandHandler.commands.put("stats", new Statistics());
     }
 
 }
