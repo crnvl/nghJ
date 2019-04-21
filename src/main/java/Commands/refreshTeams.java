@@ -35,9 +35,9 @@ public class refreshTeams implements Command{
                         event.getGuild().getController().addSingleRoleToMember(event.getGuild().getMembers().get(i), event.getGuild().getRoleById("569471608289492994")).queue();
                         break;
                 }
+            }
                 event.getTextChannel().sendMessage("Completed!").queue();
                 event.getTextChannel().sendMessage("Refresh done.").queue();
-            }
         }else {
             event.getTextChannel().sendMessage(":x: Sorry, you're not allowed to use this command!").queue();
         }
