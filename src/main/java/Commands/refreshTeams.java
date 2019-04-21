@@ -12,7 +12,7 @@ public class refreshTeams implements Command{
     }
 
     @Override
-    public void action(String[] args, MessageReceivedEvent event) throws IOException {
+    public void action(String[] args, MessageReceivedEvent event) {
         if (event.getMember().getUser().getId().contains("265849018662387712")) {
             event.getTextChannel().sendMessage("Refreshing Teamroles...").queue();
             event.getTextChannel().sendMessage("Removing Roles...").queue();
