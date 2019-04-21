@@ -19,7 +19,7 @@ public class CommandListener extends ListenerAdapter {
 
             try {
                 CommandHandler.handleCommand(CommandHandler.parse.parser(event.getMessage().getContentRaw(), event, Config.PREFIX));
-            } catch (IOException e) {
+            } catch (Exception e) {
                 e.printStackTrace();
             }
 
