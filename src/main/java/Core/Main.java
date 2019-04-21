@@ -2,6 +2,7 @@ package Core;
 
 import Listeners.CommandListener;
 import Listeners.ReactionRoleListener;
+import Listeners.TeamListener;
 import Utility.Config;
 import net.dv8tion.jda.core.AccountType;
 import net.dv8tion.jda.core.JDA;
@@ -19,11 +20,12 @@ public class Main {
         builder = new JDABuilder(AccountType.BOT);
 
         builder.setToken(Config.TOKEN);
-        builder.setStatus(OnlineStatus.DO_NOT_DISTURB);
-        builder.setGame(Game.watching("lewd anime girls"));
+        builder.setStatus(OnlineStatus.IDLE);
+        builder.setGame(Game.watching("your team"));
 
         builder.addEventListener(new CommandListener());
         builder.addEventListener(new ReactionRoleListener());
+        builder.addEventListener(new TeamListener());
         addCommands();
 
         JDA jda = builder.build();
@@ -31,8 +33,6 @@ public class Main {
     }
 
     public static void addCommands() {
-
-
 
     }
 
