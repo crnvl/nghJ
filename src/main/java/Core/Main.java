@@ -49,13 +49,13 @@ public class Main {
                             Random ran = new Random();
                             int size = jda.getUsers().size();
                             int y = ran.nextInt(size);
-                            builder.setGame(Game.watching(jda.getUsers().get(y).getAsTag()));
+                            jda.getPresence().setGame(Game.watching(jda.getUsers().get(y).getAsTag()));
                             break;
                         case 1:
                             Random ran1 = new Random();
                             int size1 = jda.getUsers().size();
                             int y1 = ran1.nextInt(size1);
-                            builder.setGame(Game.watching(jda.getUsers().get(y1).getAsTag()));
+                            jda.getPresence().setGame(Game.watching(jda.getUsers().get(y1).getAsTag()));
                             break;
                     }
                 }
