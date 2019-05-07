@@ -47,12 +47,14 @@ public class Main {
                     switch(secondsPassed){
                         case 0:
                             Random ran = new Random();
-                            int y = ran.nextInt(0) + jda.getUsers().size();
+                            int size = jda.getUsers().size() - 1;
+                            int y = ran.nextInt(1) + size;
                             builder.setGame(Game.watching(jda.getUsers().get(y).getAsTag()));
                             break;
                         case 1:
                             Random ran1 = new Random();
-                            int y1 = ran1.nextInt(0) + jda.getUsers().size();
+                            int size1 = jda.getUsers().size() - 1;
+                            int y1 = ran1.nextInt(1) + size1;
                             builder.setGame(Game.watching(jda.getUsers().get(y1).getAsTag()));
                             break;
                     }
