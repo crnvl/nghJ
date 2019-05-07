@@ -15,12 +15,15 @@ import net.dv8tion.jda.core.OnlineStatus;
 import net.dv8tion.jda.core.entities.Game;
 
 import javax.security.auth.login.LoginException;
+import java.util.Random;
+import java.util.Timer;
+import java.util.TimerTask;
 
 public class Main {
 
     public static JDABuilder builder;
 
-    public static void main(String[] Args) throws LoginException {
+    public static void main(String[] Args) {
         builder = new JDABuilder(AccountType.BOT);
 
         builder.setToken(Config.TOKEN);
@@ -33,7 +36,32 @@ public class Main {
         builder.addEventListener(new EventHandler());
         addCommands();
 
-        JDA jda = builder.build();
+
+        try {
+            JDA jda = builder.build();
+            Timer myTimer1 = new Timer();
+            TimerTask task = new TimerTask() {
+                int secondsPassed = 0;
+                @Override
+                public void run() {
+                    switch(secondsPassed){
+                        case 0:
+                            Random ran = new Random();
+                            int y = ran.nextInt(0) + jda.getUsers().size();
+                            builder.setGame(Game.watching(jda.getUsers().get(y).getAsTag()));
+                            break;
+                        case 1:
+                            Random ran1 = new Random();
+                            int y1 = ran1.nextInt(0) + jda.getUsers().size();
+                            builder.setGame(Game.watching(jda.getUsers().get(y1).getAsTag()));
+                            break;
+                    }
+                }
+            };
+            myTimer1.schedule(task, 30000, 30000);
+        } catch (LoginException e) {
+            e.printStackTrace();
+        }
 
     }
 
